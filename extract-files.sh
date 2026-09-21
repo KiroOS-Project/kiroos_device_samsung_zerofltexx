@@ -22,4 +22,4 @@ export DEVICE=zerofltexx
 export DEVICE_COMMON=zero-common
 export VENDOR=samsung
 
-./../$DEVICE_COMMON/extract-files.sh $@
+./../universal7420-common/extract-files.sh $@

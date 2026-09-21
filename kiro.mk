@@ -29,4 +29,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kiroos.battery_mah=2550 \
     ro.kiroos.ram_gb=3 \
     ro.kiroos.edge=0 \
-    persist.sys.kiroos.edge_reject=0
+    persist.sys.kiroos.edge_zone=6

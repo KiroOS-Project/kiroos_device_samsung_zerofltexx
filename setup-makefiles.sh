@@ -22,4 +22,4 @@ export DEVICE=zerofltexx
 export DEVICE_COMMON=zero-common
 export VENDOR=samsung
 
-./../$DEVICE_COMMON/setup-makefiles.sh $@
+./../universal7420-common/setup-makefiles.sh $@
