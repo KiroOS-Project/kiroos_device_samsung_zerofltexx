@@ -1,0 +1,10 @@
+# zerofltexx (Galaxy S6) model specific blobs, extracted from the
+# stock Samsung Nougat /system on top of universal7420-common/common-proprietary-blobs.txt.
+# Everything else (Mali GPU + Vulkan HAL, camera, GPS, sensors, fingerprint, Wi-Fi/BT
+# firmware, audio effects) is shared by the S6 and S6 edge and lives in the common list.
+
+# Radio: Shannon 333 modem RIL, single and dual SIM
+lib/libsec-ril.so
+lib/libsec-ril-dsds.so
+lib64/libsec-ril.so
+lib64/libsec-ril-dsds.so

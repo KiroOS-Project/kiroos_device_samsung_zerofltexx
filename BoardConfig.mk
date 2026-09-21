@@ -21,7 +21,7 @@
 #
 
 # inherit from zero-common
-include device/samsung/zero-common/BoardConfigCommon.mk
+include device/samsung/universal7420-common/BoardConfigCommon.mk
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := zerofltexx,zeroflte

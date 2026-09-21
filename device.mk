@@ -30,9 +30,15 @@ $(call inherit-product-if-exists, vendor/samsung/zerofltexx/zerofltexx-vendor.mk
 PRODUCT_PACKAGES += \
     init.carrier.rc
 
+# KiroOS boot logo (PARAM partition), S6 flat only: the PARAM image is model specific, so
+# the edge variants never get it. It travels in the OTA as install/param.bin and
+# universal7420-common/releasetools.py flashes it.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/param.bin:install/param.bin
+
 # cpboot daemon
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ril/sbin/cbd:root/sbin/cbd
 
 # Inherit from zero-common
-$(call inherit-product, device/samsung/zero-common/zero-common.mk)
+$(call inherit-product, device/samsung/universal7420-common/universal7420-common.mk)

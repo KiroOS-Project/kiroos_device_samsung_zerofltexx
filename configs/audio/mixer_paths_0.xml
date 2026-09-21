@@ -2558,8 +2558,9 @@
 	</path>
 
 	<path name="gain-media-speaker">
-		<ctl name="DSP5L Input 1 Volume" value="26" />
-		<ctl name="DSP5L Input 2 Volume" value="26" />
+		<!-- KiroOS: +3dB into the Maxim DSM smart amp (VI sensing limits excursion), still below 0dBFS -->
+		<ctl name="DSP5L Input 1 Volume" value="29" />
+		<ctl name="DSP5L Input 2 Volume" value="29" />
 		<ctl name="AIF4TX1 Input 1 Volume" value="36" />
 		<ctl name="AIF4TX2 Input 1 Volume" value="36" />
 	</path>

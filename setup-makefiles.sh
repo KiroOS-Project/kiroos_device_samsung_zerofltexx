@@ -18,6 +18,7 @@
 set -e
 
 export DEVICE=zerofltexx
+# the blobs stay in vendor/samsung/zero-common (device/samsung/zero-common links to universal7420-common)
 export DEVICE_COMMON=zero-common
 export VENDOR=samsung
 
