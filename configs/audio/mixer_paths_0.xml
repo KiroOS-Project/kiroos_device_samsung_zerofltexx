@@ -200,8 +200,27 @@
 		<ctl name="ISRC4 FSL" value="SYNCCLK rate 3" />
 		<ctl name="ISRC4 FSH" value="SYNCCLK rate 1" />
 		<ctl name="DSP5 Rate" value="SYNCCLK rate 1" />
-		<ctl name="DSP5L Input 1" value="AIF1RX1" />
-		<ctl name="DSP5L Input 2" value="AIF1RX2" />
+		<!-- KiroOS speaker voicing: left/right through EQ1/EQ2 before the Maxim DSM smart amp
+		     (which keeps protecting the speaker with VI sensing). Bands measured on the codec
+		     with these coefficients: <150 Hz shelf, 258 Hz, 703 Hz, 2 kHz, high shelf.
+		     Curve: -2 / +4 / -1 / +1 / +2 dB = fuller upper bass, less boxy mids, more air.
+		     Byte arrays must be <param> (a <ctl> only writes the first byte to all 40). -->
+		<param name="EQ1 Coefficients" value="0 0 15 209 3 253 0 188 30 244 241 7 4 12 4 18 29 30 242 193 4 10 10 232 24 73 246 214 4 10 27 18 6 216 5 182 64 0 0 0" />
+		<param name="EQ2 Coefficients" value="0 0 15 209 3 253 0 188 30 244 241 7 4 12 4 18 29 30 242 193 4 10 10 232 24 73 246 214 4 10 27 18 6 216 5 182 64 0 0 0" />
+		<ctl name="EQ1 B1 Volume" value="10" />
+		<ctl name="EQ1 B2 Volume" value="16" />
+		<ctl name="EQ1 B3 Volume" value="11" />
+		<ctl name="EQ1 B4 Volume" value="13" />
+		<ctl name="EQ1 B5 Volume" value="14" />
+		<ctl name="EQ2 B1 Volume" value="10" />
+		<ctl name="EQ2 B2 Volume" value="16" />
+		<ctl name="EQ2 B3 Volume" value="11" />
+		<ctl name="EQ2 B4 Volume" value="13" />
+		<ctl name="EQ2 B5 Volume" value="14" />
+		<ctl name="EQ1 Input 1" value="AIF1RX1" />
+		<ctl name="EQ2 Input 1" value="AIF1RX2" />
+		<ctl name="DSP5L Input 1" value="EQ1" />
+		<ctl name="DSP5L Input 2" value="EQ2" />
 		<ctl name="ISRC4DEC1 Input" value="DSP5.1" />
 		<ctl name="ISRC4DEC2 Input" value="DSP5.1" />
 		<ctl name="AIF4TX1 Input 1" value="ISRC4DEC1" />
@@ -2558,9 +2577,12 @@
 	</path>
 
 	<path name="gain-media-speaker">
-		<!-- KiroOS: +3dB into the Maxim DSM smart amp (VI sensing limits excursion), still below 0dBFS -->
-		<ctl name="DSP5L Input 1 Volume" value="29" />
-		<ctl name="DSP5L Input 2 Volume" value="29" />
+		<!-- KiroOS: 4 dB of headroom before the EQ (its +3.7 dB peak never clips), given back
+		     into the Maxim DSM smart amp: same level as before in the mids, peak under 0 dBFS -->
+		<ctl name="EQ1 Input 1 Volume" value="28" />
+		<ctl name="EQ2 Input 1 Volume" value="28" />
+		<ctl name="DSP5L Input 1 Volume" value="32" />
+		<ctl name="DSP5L Input 2 Volume" value="32" />
 		<ctl name="AIF4TX1 Input 1 Volume" value="36" />
 		<ctl name="AIF4TX2 Input 1 Volume" value="36" />
 	</path>
