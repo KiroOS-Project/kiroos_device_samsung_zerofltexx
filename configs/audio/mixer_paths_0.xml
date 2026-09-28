@@ -4793,8 +4793,7 @@
     <path name="speaker">
         <path name="media-speaker" />
 		<path name="gain-media-speaker" />
-		<path name="dual-speaker-handset" />
-		<path name="gain-dual-speaker-handset" />
+		<!-- KiroOS: media-speaker brings the earpiece along itself (EQ4, bass cut) -->
     </path>
 
     <path name="headphones">
