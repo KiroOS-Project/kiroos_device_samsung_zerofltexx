@@ -42,3 +42,7 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from zero-common
 $(call inherit-product, device/samsung/universal7420-common/universal7420-common.mk)
+
+# KiroOS: Vulkan version as the zero-common Mali driver reports it (1.0.26, measured on the S6)
+PRODUCT_COPY_FILES += \
+    device/samsung/universal7420-common/kiroos/permissions/android.hardware.vulkan.version-1_0_26.xml:system/etc/permissions/android.hardware.vulkan.version.xml
