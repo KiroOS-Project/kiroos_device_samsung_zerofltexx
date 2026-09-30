@@ -46,3 +46,9 @@ $(call inherit-product, device/samsung/universal7420-common/universal7420-common
 # KiroOS: Vulkan version as the zero-common Mali driver reports it (1.0.26, measured on the S6)
 PRODUCT_COPY_FILES += \
     device/samsung/universal7420-common/kiroos/permissions/android.hardware.vulkan.version-1_0_26.xml:system/etc/permissions/android.hardware.vulkan.version.xml
+
+# KiroOS: the Mali OpenCL 1.2 of the zero-common blobs is public (vendor public libraries),
+# so apps can use GPU compute (Geekbench's GPU test). Only where the blob exists: every listed
+# library is loaded at zygote start and a missing one would break every app.
+PRODUCT_COPY_FILES += \
+    device/samsung/universal7420-common/kiroos/etc/public.libraries.opencl.txt:system/vendor/etc/public.libraries.txt
